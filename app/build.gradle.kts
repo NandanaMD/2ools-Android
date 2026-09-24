@@ -19,7 +19,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.twotools.app"
+        applicationId = "com.nmd.tools"
         minSdk = 28
         targetSdk = 35
         versionCode = 1
