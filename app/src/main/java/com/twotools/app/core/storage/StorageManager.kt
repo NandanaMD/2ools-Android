@@ -108,6 +108,37 @@ class StorageManager(private val context: Context) {
         }
     }
 
+    suspend fun getCacheSizeBytes(): Long = withContext(Dispatchers.IO) {
+        try {
+            fun dirSize(dir: File): Long {
+                var size = 0L
+                dir.listFiles()?.forEach { file ->
+                    size += if (file.isDirectory) dirSize(file) else file.length()
+                }
+                return size
+            }
+            dirSize(context.cacheDir)
+        } catch (e: Exception) {
+            0L
+        }
+    }
+
+    suspend fun clearAllCache(): Boolean = withContext(Dispatchers.IO) {
+        try {
+            fun deleteDir(dir: File) {
+                dir.listFiles()?.forEach { file ->
+                    if (file.isDirectory) deleteDir(file)
+                    file.delete()
+                }
+            }
+            deleteDir(context.cacheDir)
+            true
+        } catch (e: Exception) {
+            e.printStackTrace()
+            false
+        }
+    }
+
     suspend fun clearOldCache() = withContext(Dispatchers.IO) {
         try {
             val cacheDir = File(context.cacheDir, "twools_temp")

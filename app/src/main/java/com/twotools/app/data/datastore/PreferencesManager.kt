@@ -3,6 +3,7 @@ package com.twotools.app.data.datastore
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.core.stringSetPreferencesKey
@@ -17,6 +18,7 @@ class PreferencesManager(private val context: Context) {
     companion object {
         private val FAVORITE_TOOLS_KEY = stringSetPreferencesKey("favorite_tools")
         private val RECENT_TOOLS_KEY = stringPreferencesKey("recent_tools_csv")
+        private val HAPTIC_ENABLED_KEY = booleanPreferencesKey("haptic_feedback_enabled")
     }
 
     val favoriteToolsFlow: Flow<Set<String>> = context.dataStore.data.map { preferences ->
@@ -48,6 +50,16 @@ class PreferencesManager(private val context: Context) {
             current.add(0, toolId)
             val trimmed = current.take(10).joinToString(",")
             preferences[RECENT_TOOLS_KEY] = trimmed
+        }
+    }
+
+    val hapticFeedbackFlow: Flow<Boolean> = context.dataStore.data.map { preferences ->
+        preferences[HAPTIC_ENABLED_KEY] ?: true
+    }
+
+    suspend fun setHapticFeedback(enabled: Boolean) {
+        context.dataStore.edit { preferences ->
+            preferences[HAPTIC_ENABLED_KEY] = enabled
         }
     }
 }

@@ -46,6 +46,7 @@ import kotlinx.coroutines.delay
 fun HomeScreen(
     viewModel: HomeViewModel,
     onToolClick: (Tool) -> Unit,
+    onSettingsClick: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val searchQuery by viewModel.searchQuery.collectAsState()
@@ -107,27 +108,54 @@ fun HomeScreen(
                             }
                         }
 
-                        // Total Tools Badge
-                        Surface(
-                            shape = RoundedCornerShape(12.dp),
-                            color = MaterialTheme.colorScheme.surfaceVariant
+                        // Right actions: Tools count & Settings
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(8.dp)
                         ) {
-                            Row(
-                                modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp),
-                                verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.spacedBy(6.dp)
+                            // Total Tools Badge
+                            Surface(
+                                shape = RoundedCornerShape(12.dp),
+                                color = MaterialTheme.colorScheme.surfaceVariant
                             ) {
-                                Box(
-                                    modifier = Modifier
-                                        .size(7.dp)
-                                        .clip(CircleShape)
-                                        .background(MaterialTheme.colorScheme.primary)
-                                )
-                                Text(
-                                    text = "${filteredTools.size} Tools",
-                                    style = MaterialTheme.typography.labelSmall,
-                                    fontWeight = FontWeight.Bold,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                Row(
+                                    modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp),
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.spacedBy(6.dp)
+                                ) {
+                                    Box(
+                                        modifier = Modifier
+                                            .size(7.dp)
+                                            .clip(CircleShape)
+                                            .background(MaterialTheme.colorScheme.primary)
+                                    )
+                                    Text(
+                                        text = "${filteredTools.size} Tools",
+                                        style = MaterialTheme.typography.labelSmall,
+                                        fontWeight = FontWeight.Bold,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                                    )
+                                }
+                            }
+
+                            // Settings Button
+                            IconButton(
+                                onClick = {
+                                    haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+                                    onSettingsClick()
+                                },
+                                modifier = Modifier
+                                    .size(34.dp)
+                                    .background(
+                                        color = MaterialTheme.colorScheme.surfaceVariant,
+                                        shape = CircleShape
+                                    )
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Rounded.Settings,
+                                    contentDescription = "Settings",
+                                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    modifier = Modifier.size(18.dp)
                                 )
                             }
                         }

@@ -17,6 +17,7 @@ import com.twotools.app.features.qr.generator.QrGeneratorViewModel
 import com.twotools.app.features.qr.scanner.QrScannerViewModel
 import com.twotools.app.features.text.caseconverter.CaseConverterViewModel
 import com.twotools.app.features.text.hash.HashGeneratorViewModel
+import com.twotools.app.features.settings.SettingsViewModel
 import com.twotools.app.features.text.inspector.TextInspectorViewModel
 import com.twotools.app.features.vault.VaultRepository
 import com.twotools.app.features.vault.VaultViewModel
@@ -32,6 +33,7 @@ val appModule = module {
 
     // ViewModels
     viewModel { HomeViewModel(get()) }
+    viewModel { SettingsViewModel(get(), get()) }
     viewModel { TextInspectorViewModel() }
     viewModel { CaseConverterViewModel() }
     viewModel { HashGeneratorViewModel() }

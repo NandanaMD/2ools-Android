@@ -47,6 +47,8 @@ import com.twotools.app.features.vault.VaultScreen
 import com.twotools.app.features.vault.VaultViewModel
 import com.twotools.app.features.text.caseconverter.CaseConverterScreen
 import com.twotools.app.features.text.caseconverter.CaseConverterViewModel
+import com.twotools.app.features.settings.SettingsScreen
+import com.twotools.app.features.settings.SettingsViewModel
 import com.twotools.app.features.text.hash.HashGeneratorScreen
 import com.twotools.app.features.text.hash.HashGeneratorViewModel
 import com.twotools.app.features.text.inspector.TextInspectorScreen
@@ -55,6 +57,7 @@ import org.koin.androidx.compose.koinViewModel
 
 sealed class Screen(val route: String) {
     data object Home : Screen("home")
+    data object Settings : Screen("settings")
 }
 
 @Composable
@@ -119,7 +122,19 @@ fun AppNavigation(
                 viewModel = homeViewModel,
                 onToolClick = { tool ->
                     navController.navigate(tool.route)
+                },
+                onSettingsClick = {
+                    navController.navigate(Screen.Settings.route)
                 }
+            )
+        }
+
+        // Settings Screen
+        composable(Screen.Settings.route) {
+            val vm: SettingsViewModel = koinViewModel()
+            SettingsScreen(
+                viewModel = vm,
+                onBackClick = { navController.popBackStack() }
             )
         }
 

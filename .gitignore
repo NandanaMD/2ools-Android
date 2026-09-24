@@ -12,6 +12,7 @@ local.properties
 *.keystore
 *.p12
 signing.properties
+keystore.properties
 
 # Generated APKs, AABs, and bundles
 *.apk
