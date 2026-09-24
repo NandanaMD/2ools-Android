@@ -1,15 +1,20 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - 2ools: Everyday Utility Tools</title>
+    <meta name="description"
+        content="2ools is a simple offline utility suite for Android with PDF, image, QR, calculation and conversion tools.">
+    <title>2ools - Everyday Utility Tools</title>
     <link rel="icon" type="image/png" href="logo.png">
+
     <style>
         :root {
             --bg-color: #0f1115;
             --surface-color: #181b22;
+            --surface-secondary: #1d2129;
             --border-color: #2e3542;
             --text-primary: #f1f3f8;
             --text-secondary: #9ca3af;
@@ -21,6 +26,7 @@
             :root {
                 --bg-color: #f8f9fc;
                 --surface-color: #ffffff;
+                --surface-secondary: #f2f4f8;
                 --border-color: #e2e5ec;
                 --text-primary: #191c20;
                 --text-secondary: #535f70;
@@ -35,42 +41,241 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-primary);
             line-height: 1.6;
-            padding: 32px 16px;
         }
 
-        .container {
+        /* ---------------- NAVIGATION ---------------- */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--surface-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: auto;
+            height: 70px;
+            padding: 0 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .brand img {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+
+            padding: 8px 12px;
+            border-radius: 8px;
+
+            transition: 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+            background: var(--surface-secondary);
+        }
+
+        /* ---------------- GENERAL ---------------- */
+
+        section {
+            scroll-margin-top: 90px;
+        }
+
+        .page-width {
+            max-width: 1000px;
+            margin: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        /* ---------------- HOME ---------------- */
+
+        .hero {
+            min-height: 600px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        .hero-content {
+            max-width: 720px;
+        }
+
+        .hero-logo {
+            width: 96px;
+            height: 96px;
+            border-radius: 24px;
+            object-fit: cover;
+
+            margin-bottom: 26px;
+
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 7vw, 64px);
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+        }
+
+        .hero-description {
+            max-width: 620px;
+            margin: auto;
+
+            color: var(--text-secondary);
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .hero-badge {
+            display: inline-block;
+
+            margin-top: 26px;
+
+            background: var(--accent-container);
+            color: var(--accent-color);
+
+            font-size: 13px;
+            font-weight: 600;
+
+            padding: 7px 14px;
+            border-radius: 10px;
+        }
+
+        /* ---------------- TOOLS ---------------- */
+
+        .tools-section {
+            padding-bottom: 100px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .section-heading h2 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .section-heading p {
+            color: var(--text-secondary);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .tool-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .tool-card h3 {
+            font-size: 17px;
+            margin-bottom: 12px;
+        }
+
+        .tool-card ul {
+            list-style: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .tool-card li {
+            padding: 4px 0;
+        }
+
+        /* ---------------- PRIVACY ---------------- */
+
+        .privacy-section {
+            padding-top: 90px;
+            padding-bottom: 100px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .privacy-container {
             max-width: 760px;
-            margin: 0 auto;
+            margin: auto;
+
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
             border-radius: 20px;
+
             padding: 40px;
+
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .header {
+        .privacy-header {
             display: flex;
             align-items: center;
             gap: 16px;
+
             margin-bottom: 24px;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 20px;
         }
 
-        .logo-img {
+        .privacy-header img {
             width: 52px;
             height: 52px;
             border-radius: 14px;
             object-fit: cover;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
         }
 
-        h1 {
+        .privacy-header h1 {
             font-size: 24px;
             font-weight: 700;
         }
@@ -83,41 +288,47 @@
 
         .effective-date {
             display: inline-block;
+
             background-color: var(--accent-container);
             color: var(--accent-color);
+
             font-size: 12px;
             font-weight: 600;
+
             padding: 4px 10px;
             border-radius: 8px;
             margin-bottom: 24px;
         }
 
-        h2 {
+        .privacy-container h2 {
             font-size: 18px;
             font-weight: 600;
+
             margin-top: 28px;
             margin-bottom: 10px;
+
             color: var(--accent-color);
         }
 
-        p {
+        .privacy-container p {
             margin-bottom: 14px;
             color: var(--text-secondary);
             font-size: 15px;
         }
 
-        strong {
+        .privacy-container strong {
             color: var(--text-primary);
         }
 
-        ul {
+        .privacy-container ul {
             margin-left: 20px;
             margin-bottom: 16px;
+
             color: var(--text-secondary);
             font-size: 15px;
         }
 
-        li {
+        .privacy-container li {
             margin-bottom: 6px;
         }
 
@@ -125,6 +336,7 @@
             background-color: rgba(121, 167, 255, 0.08);
             border: 1px solid var(--border-color);
             border-radius: 12px;
+
             padding: 16px;
             margin-top: 10px;
         }
@@ -139,91 +351,381 @@
             text-decoration: underline;
         }
 
-        .footer {
-            margin-top: 36px;
-            padding-top: 20px;
+        /* ---------------- FOOTER ---------------- */
+
+        footer {
             border-top: 1px solid var(--border-color);
+            padding: 30px 20px;
+
             text-align: center;
+
             font-size: 13px;
             color: var(--text-secondary);
+        }
+
+        /* ---------------- MOBILE ---------------- */
+
+        @media (max-width: 650px) {
+
+            .nav-container {
+                height: 64px;
+            }
+
+            .brand span {
+                display: none;
+            }
+
+            .hero {
+                min-height: 520px;
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+
+            .hero-logo {
+                width: 82px;
+                height: 82px;
+                border-radius: 20px;
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .privacy-container {
+                padding: 24px;
+                border-radius: 16px;
+            }
+
+            .privacy-header {
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="header">
-            <img src="logo.png" alt="2ools Logo" class="logo-img">
-            <div>
-                <h1>Privacy Policy</h1>
-                <div class="subtitle">2ools: Offline Utility Suite for Android</div>
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+        <div class="nav-container">
+
+            <a href="#home" class="brand">
+                <img src="logo.png" alt="2ools Logo">
+                <span>2ools</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#privacy">Privacy Policy</a>
             </div>
+
         </div>
+    </nav>
 
-        <div class="effective-date">Last Updated: September 2026</div>
 
-        <p>Your privacy is of paramount importance to us. This Privacy Policy outlines how <strong>2ools</strong> ("the
-            App") operates and explains our commitment to protecting your personal data.</p>
+    <!-- HOME -->
 
-        <h2>1. 100% Offline-First Architecture</h2>
-        <p><strong>2ools does NOT collect, store, transmit, or sell any personal data or usage analytics.</strong></p>
-        <p>The application is built entirely as an offline utility suite. It does not require an internet connection,
-            does not contain tracking SDKs, and has zero network permissions declared in its Android Manifest.</p>
+    <main>
 
-        <h2>2. Data Processing & Storage</h2>
-        <ul>
-            <li><strong>Photos & Documents (PDF / Images):</strong> All image compression, format conversions, resizing,
-                EXIF metadata inspection, and PDF generation are performed 100% locally in your device's memory. No
-                image or document is ever uploaded to any cloud server or external third party.</li>
-            <li><strong>Password Vault:</strong> Any credentials, logins, or generated passwords stored in the Vault
-                feature are encrypted and saved solely within your device's private sandboxed app storage. Only you have
-                access to your local data.</li>
-            <li><strong>Temporary Cache:</strong> Temporary working files generated during conversions are stored in
-                your device's private cache directory and are automatically purged.</li>
-        </ul>
+        <section id="home" class="hero">
 
-        <h2>3. Device Permissions</h2>
-        <p>2ools requests the minimum possible device permissions strictly to perform the features you initiate:</p>
-        <ul>
-            <li><strong>Camera (Optional):</strong> Used exclusively for the live QR Code and Barcode scanner. Camera
-                frames are processed in real-time in memory using Google ML Kit on-device models. No photos or video
-                recordings are saved or transmitted.</li>
-            <li><strong>Storage / Media:</strong> Utilizes Android's modern Storage Access Framework (SAF) and Photo
-                Picker to let you explicitly select specific files for conversion or saving. 2ools does not have broad
-                access to your entire storage.</li>
-        </ul>
+            <div class="page-width hero-content">
 
-        <h2>4. Third-Party Services & Advertising</h2>
-        <p>2ools contains:</p>
-        <ul>
-            <li><strong>No Ads:</strong> No third-party ad networks (e.g., AdMob).</li>
-            <li><strong>No Analytics:</strong> No tracking SDKs (e.g., Google Analytics, Firebase, Crashlytics, Facebook
-                SDK).</li>
-            <li><strong>No Accounts:</strong> No sign-up, registration, or cloud accounts required.</li>
-        </ul>
+                <img src="logo.png" alt="2ools App Logo" class="hero-logo">
 
-        <h2>5. Children's Privacy</h2>
-        <p>Since 2ools collects no personal data whatsoever, it is safe for all age groups and complies with the
-            Children's Online Privacy Protection Act (COPPA) and GDPR.</p>
+                <h1>Everyday tools.<br>One simple app.</h1>
 
-        <h2>6. Changes to This Privacy Policy</h2>
-        <p>We may update our Privacy Policy from time to time. Any changes will be reflected on this page with an
-            updated effective date.</p>
+                <p class="hero-description">
+                    2ools brings useful everyday utilities together in one clean
+                    Android app. Work with PDFs, images, QR codes, calculations,
+                    conversions and more — without installing separate apps for
+                    every task.
+                </p>
 
-        <h2>7. Contact Us</h2>
-        <p>If you have any questions, feedback, or inquiries regarding this Privacy Policy or the 2ools application,
-            please contact us at:</p>
-        <div class="contact-box">
-            <p style="margin-bottom: 0;">
-                <strong>Support Email:</strong>
-                <a href="mailto:support.smallstack@gmail.com">support.smallstack@gmail.com</a>
-            </p>
-        </div>
+                <div class="hero-badge">
+                    Coming Soon to Android
+                </div>
 
-        <div class="footer">
-            &copy; 2026 2ools. All rights reserved. 100% Offline & Private.
-        </div>
-    </div>
+            </div>
+
+        </section>
+
+
+        <!-- TOOLS -->
+
+        <section class="tools-section">
+
+            <div class="page-width">
+
+                <div class="section-heading">
+                    <h2>Useful tools. All in one place.</h2>
+                    <p>Simple utilities designed for everyday tasks.</p>
+                </div>
+
+
+                <div class="tools-grid">
+
+                    <div class="tool-card">
+                        <h3>PDF Tools</h3>
+
+                        <ul>
+                            <li>Images to PDF</li>
+                            <li>PDF to Images</li>
+                            <li>Merge PDFs</li>
+                            <li>Split PDFs</li>
+                            <li>Compress PDFs</li>
+                            <li>Organize PDF Pages</li>
+                        </ul>
+                    </div>
+
+
+                    <div class="tool-card">
+                        <h3>Image Tools</h3>
+
+                        <ul>
+                            <li>Compress Images</li>
+                            <li>Resize Images</li>
+                            <li>Convert Image Formats</li>
+                            <li>View Image Information</li>
+                            <li>Inspect EXIF Metadata</li>
+                        </ul>
+                    </div>
+
+
+                    <div class="tool-card">
+                        <h3>QR & Barcode</h3>
+
+                        <ul>
+                            <li>Generate QR Codes</li>
+                            <li>Scan QR Codes</li>
+                            <li>Scan Barcodes</li>
+                            <li>Save & Share QR Codes</li>
+                        </ul>
+                    </div>
+
+
+                    <div class="tool-card">
+                        <h3>Everyday Utilities</h3>
+
+                        <ul>
+                            <li>Calculators</li>
+                            <li>Unit Conversions</li>
+                            <li>Password Generator</li>
+                            <li>Secure Password Vault</li>
+                            <li>And more</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRIVACY POLICY -->
+
+        <section id="privacy" class="privacy-section">
+
+            <div class="page-width">
+
+                <div class="privacy-container">
+
+                    <div class="privacy-header">
+
+                        <img src="logo.png" alt="2ools Logo">
+
+                        <div>
+                            <h1>Privacy Policy</h1>
+                            <div class="subtitle">
+                                2ools: Offline Utility Suite for Android
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="effective-date">
+                        Last Updated: September 2026
+                    </div>
+
+
+                    <p>
+                        Your privacy is of paramount importance to us. This Privacy
+                        Policy outlines how <strong>2ools</strong> ("the App")
+                        operates and explains our commitment to protecting your
+                        personal data.
+                    </p>
+
+
+                    <h2>1. 100% Offline-First Architecture</h2>
+
+                    <p>
+                        <strong>
+                            2ools does NOT collect, store, transmit, or sell any
+                            personal data or usage analytics.
+                        </strong>
+                    </p>
+
+                    <p>
+                        The application is built entirely as an offline utility
+                        suite. It does not require an internet connection, does not
+                        contain tracking SDKs, and has zero network permissions
+                        declared in its Android Manifest.
+                    </p>
+
+
+                    <h2>2. Data Processing & Storage</h2>
+
+                    <ul>
+
+                        <li>
+                            <strong>Photos & Documents (PDF / Images):</strong>
+                            All image compression, format conversions, resizing,
+                            EXIF metadata inspection, and PDF generation are
+                            performed 100% locally in your device's memory. No
+                            image or document is ever uploaded to any cloud server
+                            or external third party.
+                        </li>
+
+                        <li>
+                            <strong>Password Vault:</strong>
+                            Any credentials, logins, or generated passwords stored
+                            in the Vault feature are encrypted and saved solely
+                            within your device's private sandboxed app storage.
+                            Only you have access to your local data.
+                        </li>
+
+                        <li>
+                            <strong>Temporary Cache:</strong>
+                            Temporary working files generated during conversions
+                            are stored in your device's private cache directory and
+                            are automatically purged.
+                        </li>
+
+                    </ul>
+
+
+                    <h2>3. Device Permissions</h2>
+
+                    <p>
+                        2ools requests the minimum possible device permissions
+                        strictly to perform the features you initiate:
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            <strong>Camera (Optional):</strong>
+                            Used exclusively for the live QR Code and Barcode
+                            scanner. Camera frames are processed in real-time in
+                            memory using Google ML Kit on-device models. No photos
+                            or video recordings are saved or transmitted.
+                        </li>
+
+                        <li>
+                            <strong>Storage / Media:</strong>
+                            Utilizes Android's modern Storage Access Framework
+                            (SAF) and Photo Picker to let you explicitly select
+                            specific files for conversion or saving. 2ools does
+                            not have broad access to your entire storage.
+                        </li>
+
+                    </ul>
+
+
+                    <h2>4. Third-Party Services & Advertising</h2>
+
+                    <p>2ools contains:</p>
+
+                    <ul>
+
+                        <li>
+                            <strong>No Ads:</strong>
+                            No third-party ad networks (e.g., AdMob).
+                        </li>
+
+                        <li>
+                            <strong>No Analytics:</strong>
+                            No tracking SDKs (e.g., Google Analytics, Firebase,
+                            Crashlytics, Facebook SDK).
+                        </li>
+
+                        <li>
+                            <strong>No Accounts:</strong>
+                            No sign-up, registration, or cloud accounts required.
+                        </li>
+
+                    </ul>
+
+
+                    <h2>5. Children's Privacy</h2>
+
+                    <p>
+                        Since 2ools collects no personal data whatsoever, it is
+                        designed to operate without collecting personal
+                        information from children or other users.
+                    </p>
+
+
+                    <h2>6. Changes to This Privacy Policy</h2>
+
+                    <p>
+                        We may update our Privacy Policy from time to time. Any
+                        changes will be reflected on this page with an updated
+                        effective date.
+                    </p>
+
+
+                    <h2>7. Contact Us</h2>
+
+                    <p>
+                        If you have any questions, feedback, or inquiries regarding
+                        this Privacy Policy or the 2ools application, please
+                        contact us at:
+                    </p>
+
+
+                    <div class="contact-box">
+
+                        <p style="margin-bottom: 0;">
+
+                            <strong>Support Email:</strong>
+
+                            <a href="mailto:support.smallstack@gmail.com">
+                                support.smallstack@gmail.com
+                            </a>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        &copy; 2026 2ools. All rights reserved.
+        Built for privacy. Designed to work offline.
+    </footer>
+
 </body>
 
 </html>
+```
