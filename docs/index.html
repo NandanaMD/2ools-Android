@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - 2ools: Offline Utility Suite</title>
+    <title>Privacy Policy - 2ools: Everyday Utility Tools</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <style>
         :root {
             --bg-color: #0f1115;
@@ -60,17 +62,12 @@
             padding-bottom: 20px;
         }
 
-        .logo {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background-color: var(--accent-container);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            font-size: 22px;
-            color: var(--accent-color);
+        .logo-img {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            object-fit: cover;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
         }
 
         h1 {
@@ -124,6 +121,24 @@
             margin-bottom: 6px;
         }
 
+        .contact-box {
+            background-color: rgba(121, 167, 255, 0.08);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 10px;
+        }
+
+        .contact-box a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
         .footer {
             margin-top: 36px;
             padding-top: 20px;
@@ -134,10 +149,11 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo">2</div>
+            <img src="logo.png" alt="2ools Logo" class="logo-img">
             <div>
                 <h1>Privacy Policy</h1>
                 <div class="subtitle">2ools: Offline Utility Suite for Android</div>
@@ -146,46 +162,68 @@
 
         <div class="effective-date">Last Updated: September 2026</div>
 
-        <p>Your privacy is of paramount importance to us. This Privacy Policy outlines how <strong>2ools</strong> ("the App") operates and explains our commitment to protecting your personal data.</p>
+        <p>Your privacy is of paramount importance to us. This Privacy Policy outlines how <strong>2ools</strong> ("the
+            App") operates and explains our commitment to protecting your personal data.</p>
 
         <h2>1. 100% Offline-First Architecture</h2>
         <p><strong>2ools does NOT collect, store, transmit, or sell any personal data or usage analytics.</strong></p>
-        <p>The application is built entirely as an offline utility suite. It does not require an internet connection, does not contain tracking SDKs, and has zero network permissions declared in its Android Manifest.</p>
+        <p>The application is built entirely as an offline utility suite. It does not require an internet connection,
+            does not contain tracking SDKs, and has zero network permissions declared in its Android Manifest.</p>
 
         <h2>2. Data Processing & Storage</h2>
         <ul>
-            <li><strong>Photos & Documents (PDF / Images):</strong> All image compression, format conversions, resizing, EXIF metadata inspection, and PDF generation are performed 100% locally in your device's memory. No image or document is ever uploaded to any cloud server or external third party.</li>
-            <li><strong>Password Vault:</strong> Any credentials, logins, or generated passwords stored in the Vault feature are encrypted and saved solely within your device's private sandboxed app storage. Only you have access to your local data.</li>
-            <li><strong>Temporary Cache:</strong> Temporary working files generated during conversions are stored in your device's private cache directory and are automatically purged.</li>
+            <li><strong>Photos & Documents (PDF / Images):</strong> All image compression, format conversions, resizing,
+                EXIF metadata inspection, and PDF generation are performed 100% locally in your device's memory. No
+                image or document is ever uploaded to any cloud server or external third party.</li>
+            <li><strong>Password Vault:</strong> Any credentials, logins, or generated passwords stored in the Vault
+                feature are encrypted and saved solely within your device's private sandboxed app storage. Only you have
+                access to your local data.</li>
+            <li><strong>Temporary Cache:</strong> Temporary working files generated during conversions are stored in
+                your device's private cache directory and are automatically purged.</li>
         </ul>
 
         <h2>3. Device Permissions</h2>
         <p>2ools requests the minimum possible device permissions strictly to perform the features you initiate:</p>
         <ul>
-            <li><strong>Camera (Optional):</strong> Used exclusively for the live QR Code and Barcode scanner. Camera frames are processed in real-time in memory using Google ML Kit on-device models. No photos or video recordings are saved or transmitted.</li>
-            <li><strong>Storage / Media:</strong> Utilizes Android's modern Storage Access Framework (SAF) and Photo Picker to let you explicitly select specific files for conversion or saving. 2ools does not have broad access to your entire storage.</li>
+            <li><strong>Camera (Optional):</strong> Used exclusively for the live QR Code and Barcode scanner. Camera
+                frames are processed in real-time in memory using Google ML Kit on-device models. No photos or video
+                recordings are saved or transmitted.</li>
+            <li><strong>Storage / Media:</strong> Utilizes Android's modern Storage Access Framework (SAF) and Photo
+                Picker to let you explicitly select specific files for conversion or saving. 2ools does not have broad
+                access to your entire storage.</li>
         </ul>
 
         <h2>4. Third-Party Services & Advertising</h2>
         <p>2ools contains:</p>
         <ul>
             <li><strong>No Ads:</strong> No third-party ad networks (e.g., AdMob).</li>
-            <li><strong>No Analytics:</strong> No tracking SDKs (e.g., Google Analytics, Firebase, Crashlytics, Facebook SDK).</li>
+            <li><strong>No Analytics:</strong> No tracking SDKs (e.g., Google Analytics, Firebase, Crashlytics, Facebook
+                SDK).</li>
             <li><strong>No Accounts:</strong> No sign-up, registration, or cloud accounts required.</li>
         </ul>
 
         <h2>5. Children's Privacy</h2>
-        <p>Since 2ools collects no personal data whatsoever, it is safe for all age groups and complies with the Children's Online Privacy Protection Act (COPPA) and GDPR.</p>
+        <p>Since 2ools collects no personal data whatsoever, it is safe for all age groups and complies with the
+            Children's Online Privacy Protection Act (COPPA) and GDPR.</p>
 
         <h2>6. Changes to This Privacy Policy</h2>
-        <p>We may update our Privacy Policy from time to time. Any changes will be reflected on this page with an updated effective date.</p>
+        <p>We may update our Privacy Policy from time to time. Any changes will be reflected on this page with an
+            updated effective date.</p>
 
         <h2>7. Contact Us</h2>
-        <p>If you have any questions or feedback regarding this Privacy Policy, you can reach out via your official support email or repository issues page.</p>
+        <p>If you have any questions, feedback, or inquiries regarding this Privacy Policy or the 2ools application,
+            please contact us at:</p>
+        <div class="contact-box">
+            <p style="margin-bottom: 0;">
+                <strong>Support Email:</strong>
+                <a href="mailto:support.smallstack@gmail.com">support.smallstack@gmail.com</a>
+            </p>
+        </div>
 
         <div class="footer">
             &copy; 2026 2ools. All rights reserved. 100% Offline & Private.
         </div>
     </div>
 </body>
+
 </html>
