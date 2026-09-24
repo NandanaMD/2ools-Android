@@ -1,0 +1,36 @@
+# Gradle build artifacts and caches
+.gradle/
+build/
+app/build/
+*/build/
+
+# Local environment configuration (contains machine-specific Android SDK paths)
+local.properties
+
+# Signing credentials, keystores & secrets
+*.jks
+*.keystore
+*.p12
+signing.properties
+
+# Generated APKs, AABs, and bundles
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# IDE Files
+.idea/
+*.iml
+.vscode/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Keep the Gradle Wrapper executable and configuration
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties

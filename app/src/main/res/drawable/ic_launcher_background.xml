@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Clean Slate / Obsidian Neutral Dark Base -->
+    <path
+        android:fillColor="#11141B"
+        android:pathData="M0,0h108v108h-108z" />
+    <!-- Clean geometric facets for depth -->
+    <path
+        android:fillColor="#181D26"
+        android:pathData="M0,0 L108,108 L0,108 Z" />
+    <path
+        android:fillColor="#212836"
+        android:pathData="M0,0 L108,0 L108,60 Z" />
+</vector>
