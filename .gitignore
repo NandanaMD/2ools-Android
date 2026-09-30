@@ -26,3 +26,7 @@ Thumbs.db
 hotinstall
 hotinstall.cmd
 hotinstall.ps1
+buildrelease
+buildrelease.cmd
+buildrelease.ps1
+release/
