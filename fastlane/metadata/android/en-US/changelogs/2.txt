@@ -1,0 +1,8 @@
+Initial release of 2ools:
+• Documents: Images to PDF, PDF to Images
+• Image: Compressor, Resizer, Format Converter, EXIF Inspector
+• QR & Barcode: Scanner and Generator
+• Calculators: Percentage, Date & Age, EMI Loan Calculator
+• Unit Converters: Length, Mass, Area, Volume, Temperature
+• Text: Text Inspector, Case Converter, Hash Generator, Password Vault
+• 100% offline, zero ads, zero analytics, no network permissions.

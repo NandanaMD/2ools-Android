@@ -1,0 +1,40 @@
+2ools is a lightweight, privacy-focused collection of essential everyday Android utilities designed to work completely offline.
+
+Instead of installing dozens of separate apps cluttered with ads, tracking SDKs, and network permissions, 2ools combines core utility tools into a single, clean Material 3 application.
+
+Features included:
+
+• Documents & PDF
+- Images to PDF: Convert multiple photos to A4 PDF with rotation, reordering, and black & white scan filter.
+- PDF to Images: Extract individual pages as high-resolution PNG or JPG images.
+
+• Image Tools
+- Image Compressor: Reduce photo file size with live preview and target size estimation.
+- Image Resizer: Scale images by percentage or custom pixel dimensions with aspect ratio lock.
+- Format Converter: Convert between JPG, PNG, and WebP formats.
+- EXIF Inspector: View camera metadata, GPS tags, and strip embedded metadata.
+
+• QR & Barcodes
+- QR Scanner: Fast camera viewfinder and gallery image decoder.
+- QR Generator: Create custom colored QR codes for URLs, plain text, and Wi-Fi networks.
+
+• Calculators
+- Percentage Calculator: Quick percentage, ratio, increase/decrease, and relative change calculations.
+- Date & Age Calculator: Exact age in years, months, days, and birthday countdown.
+- EMI Calculator: Loan repayment calculator with principal vs. interest breakdown.
+
+• Unit Converters
+- Offline conversions for Length, Mass, Area, Volume, and Temperature.
+
+• Text & Security
+- Text Inspector: Word, character, and syllable counter with reading and speaking time estimation.
+- Case Converter: Transform text between UPPERCASE, lowercase, Title Case, camelCase, snake_case, and kebab-case.
+- Hash Generator: Generate cryptographic MD5, SHA-1, SHA-256, and SHA-512 hashes.
+- Password Vault: Local encrypted password generator and credential vault using AES-256-GCM.
+
+Privacy Guarantee:
+- No advertisements.
+- No analytics or telemetry.
+- No tracking SDKs.
+- Zero network permissions requested.
+- All files and calculations are processed strictly on your device.
