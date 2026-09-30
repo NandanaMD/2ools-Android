@@ -78,8 +78,7 @@ Some of the main components used in the project are:
 - Jetpack DataStore
 - EncryptedSharedPreferences
 - CameraX
-- Google ML Kit Barcode Scanning
-- ZXing
+- ZXing (Barcode & QR Scanning / Generation)
 - Coil 3
 
 The app uses a single-activity setup with Compose navigation.

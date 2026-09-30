@@ -3,6 +3,3 @@
 
 # Keep ZXing Core models
 -keep class com.google.zxing.** { *; }
-
-# Keep ML Kit Barcode
--keep class com.google.mlkit.vision.barcode.** { *; }
