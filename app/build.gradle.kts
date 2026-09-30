@@ -110,9 +110,8 @@ dependencies {
     implementation(libs.camera.camera2)
     implementation(libs.camera.lifecycle)
     implementation(libs.camera.view)
-    implementation(libs.mlkit.barcode.scanning)
 
-    // ZXing for QR Generation
+    // ZXing for QR & Barcode Generation and Scanning
     implementation(libs.zxing.core)
 
     // ExifInterface for Privacy EXIF Stripper

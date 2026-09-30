@@ -40,7 +40,6 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
-import com.google.mlkit.vision.barcode.common.Barcode
 import com.twotools.app.core.designsystem.components.ToolScaffold
 import java.util.concurrent.Executors
 
@@ -282,7 +281,7 @@ fun QrScannerScreen(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.spacedBy(8.dp)
                         ) {
-                            val isUrl = result.valueType == Barcode.TYPE_URL ||
+                            val isUrl = result.isUrl ||
                                     result.rawValue.startsWith("http://", ignoreCase = true) ||
                                     result.rawValue.startsWith("https://", ignoreCase = true)
 
