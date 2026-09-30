@@ -56,7 +56,7 @@ private val LightColorScheme = lightColorScheme(
 @Composable
 fun TwoolsTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Clean & native: Enable dynamic color on Android 12+ (Material You)
+    // Dynamic color on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {

@@ -130,7 +130,6 @@ fun DateAgeCalculatorScreen(
             }
 
             if (ageResult != null) {
-                // Primary Age Hero Card
                 Card(
                     shape = RoundedCornerShape(24.dp),
                     colors = CardDefaults.cardColors(
@@ -163,7 +162,6 @@ fun DateAgeCalculatorScreen(
                     }
                 }
 
-                // Birthday Countdown & Total Stats
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(12.dp)

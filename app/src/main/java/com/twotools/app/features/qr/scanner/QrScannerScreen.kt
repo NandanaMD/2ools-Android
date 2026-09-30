@@ -120,7 +120,6 @@ fun QrScannerScreen(
                 .padding(innerPadding)
         ) {
             if (hasCameraPermission) {
-                // Camera Viewfinder
                 val analyzer = remember {
                     QrCodeAnalyzer { barcode ->
                         viewModel.onBarcodeDetected(barcode)
@@ -169,10 +168,8 @@ fun QrScannerScreen(
                     modifier = Modifier.fillMaxSize()
                 )
 
-                // Laser scan overlay
                 ScannerOverlay()
             } else {
-                // Permission Request Screen
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
@@ -238,7 +235,6 @@ fun QrScannerScreen(
                 }
             }
 
-            // Scanned Result Bottom Sheet
             viewModel.scanResult?.let { result ->
                 Card(
                     modifier = Modifier
@@ -282,7 +278,6 @@ fun QrScannerScreen(
                             overflow = TextOverflow.Ellipsis
                         )
 
-                        // Action Buttons
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.spacedBy(8.dp)
@@ -384,7 +379,6 @@ fun ScannerOverlay() {
                     shape = RoundedCornerShape(24.dp)
                 )
         ) {
-            // Animated Scanning Beam
             Box(
                 modifier = Modifier
                     .fillMaxWidth()

@@ -86,7 +86,6 @@ fun ImageCompressorScreen(
                     subtitle = "Select any JPG, PNG, or WebP photo from your device"
                 )
             } else {
-                // Image Preview Card
                 Card(
                     shape = RoundedCornerShape(20.dp),
                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
@@ -106,7 +105,6 @@ fun ImageCompressorScreen(
                                 .clip(RoundedCornerShape(16.dp))
                         )
 
-                        // File Information Row
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.SpaceBetween,
@@ -159,7 +157,6 @@ fun ImageCompressorScreen(
                     }
                 }
 
-                // Compression Controls Card
                 Card(
                     shape = RoundedCornerShape(20.dp),
                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
@@ -198,7 +195,6 @@ fun ImageCompressorScreen(
                             modifier = Modifier.fillMaxWidth()
                         )
 
-                        // Presets
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.spacedBy(8.dp)
@@ -214,7 +210,6 @@ fun ImageCompressorScreen(
                     }
                 }
 
-                // Action Bar
                 ExportActionBar(
                     onSaveClick = {
                         createDocLauncher.launch("compressed_${System.currentTimeMillis()}.jpg")

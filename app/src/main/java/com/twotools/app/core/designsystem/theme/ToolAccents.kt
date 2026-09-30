@@ -4,10 +4,6 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
-/**
- * Minimal, Material You tonal color pairs for each of the 16 offline tools.
- * Zero neon or harsh vibrancy - crafted with authentic M3 container and onContainer tonal scales.
- */
 data class ToolAccentColor(
     val darkContainer: Color,
     val darkOnContainer: Color,
@@ -23,7 +19,7 @@ data class ToolAccentColor(
 
 object ToolAccents {
     private val accents = mapOf(
-        // Documents & PDF (Soft Coral & Warm Rust)
+        // Documents & PDF
         "images_to_pdf" to ToolAccentColor(
             darkContainer = Color(0xFF3B2323),
             darkOnContainer = Color(0xFFF2B8B5),
@@ -37,7 +33,7 @@ object ToolAccents {
             lightOnContainer = Color(0xFF8A3D14)
         ),
 
-        // Image Utilities (Muted Sage, Seafoam, Slate Blue & Lavender)
+        // Image Utilities
         "image_compressor" to ToolAccentColor(
             darkContainer = Color(0xFF1E3427),
             darkOnContainer = Color(0xFFA7DAB6),
@@ -63,7 +59,7 @@ object ToolAccents {
             lightOnContainer = Color(0xFF55308F)
         ),
 
-        // QR & Barcodes (Soft Jade & Cerulean)
+        // QR & Barcodes
         "qr_scanner" to ToolAccentColor(
             darkContainer = Color(0xFF1A3331),
             darkOnContainer = Color(0xFF9EE0D4),
@@ -77,7 +73,7 @@ object ToolAccents {
             lightOnContainer = Color(0xFF155384)
         ),
 
-        // Calculators (Soft Honey, Rose & Emerald)
+        // Calculators
         "percentage_calc" to ToolAccentColor(
             darkContainer = Color(0xFF382E1E),
             darkOnContainer = Color(0xFFF5D69D),
@@ -97,7 +93,7 @@ object ToolAccents {
             lightOnContainer = Color(0xFF1B6327)
         ),
 
-        // Unit Converters (Soft Periwinkle / Slate Indigo)
+        // Unit Converters
         "unit_converter" to ToolAccentColor(
             darkContainer = Color(0xFF24283D),
             darkOnContainer = Color(0xFFBCC4F5),
@@ -105,7 +101,7 @@ object ToolAccents {
             lightOnContainer = Color(0xFF323E87)
         ),
 
-        // Text & Security (Mauve, Sandstone, Cobalt & Gold)
+        // Text & Security
         "text_inspector" to ToolAccentColor(
             darkContainer = Color(0xFF332435),
             darkOnContainer = Color(0xFFE4BBE8),

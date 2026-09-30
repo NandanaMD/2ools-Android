@@ -86,7 +86,6 @@ fun FormatConverterScreen(
                     subtitle = "Select any JPG, PNG, or WebP photo from your device"
                 )
             } else {
-                // Preview Card
                 Card(
                     shape = RoundedCornerShape(20.dp),
                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
@@ -141,7 +140,6 @@ fun FormatConverterScreen(
                     }
                 }
 
-                // Format Selector Card
                 Card(
                     shape = RoundedCornerShape(20.dp),
                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
@@ -217,7 +215,6 @@ fun FormatConverterScreen(
                     }
                 }
 
-                // Action Bar
                 ExportActionBar(
                     onSaveClick = {
                         createDocLauncher.launch("converted_${System.currentTimeMillis()}${viewModel.targetFormat.extension}")

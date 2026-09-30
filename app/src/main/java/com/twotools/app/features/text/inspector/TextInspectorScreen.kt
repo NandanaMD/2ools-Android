@@ -111,7 +111,6 @@ fun TextInspectorScreen(
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            // Text Input Box
             OutlinedTextField(
                 value = text,
                 onValueChange = viewModel::onTextChanged,
@@ -126,7 +125,6 @@ fun TextInspectorScreen(
                 )
             )
 
-            // Paste button row if empty
             if (text.isEmpty()) {
                 FilledTonalButton(
                     onClick = {
@@ -140,7 +138,6 @@ fun TextInspectorScreen(
                 }
             }
 
-            // Stats Cards Grid
             Text(
                 text = "Metrics & Breakdown",
                 style = MaterialTheme.typography.titleMedium,

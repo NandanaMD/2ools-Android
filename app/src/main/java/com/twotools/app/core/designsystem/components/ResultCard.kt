@@ -40,7 +40,6 @@ fun ResultCard(
                 .padding(20.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Success icon checkmark
             Box(
                 modifier = Modifier
                     .size(56.dp)

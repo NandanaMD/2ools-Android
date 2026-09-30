@@ -20,15 +20,12 @@ import kotlinx.coroutines.flow.asStateFlow
 import java.text.DecimalFormat
 
 class PercentageViewModel : ViewModel() {
-    // Mode 1: X% of Y
     var m1Percent by mutableStateOf("")
     var m1Value by mutableStateOf("")
 
-    // Mode 2: X is what % of Y
     var m2Part by mutableStateOf("")
     var m2Total by mutableStateOf("")
 
-    // Mode 3: Increase / Decrease from X to Y
     var m3From by mutableStateOf("")
     var m3To by mutableStateOf("")
 
@@ -78,7 +75,6 @@ fun PercentageCalculatorScreen(
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(20.dp)
         ) {
-            // Mode 1: What is X% of Y?
             CalcSectionCard(title = "What is X% of Y?") {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
@@ -110,7 +106,6 @@ fun PercentageCalculatorScreen(
                 }
             }
 
-            // Mode 2: X is what % of Y?
             CalcSectionCard(title = "X is what % of Y?") {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
@@ -142,7 +137,6 @@ fun PercentageCalculatorScreen(
                 }
             }
 
-            // Mode 3: Percentage increase / decrease
             CalcSectionCard(title = "Percentage Increase / Decrease") {
                 Row(
                     modifier = Modifier.fillMaxWidth(),

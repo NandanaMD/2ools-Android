@@ -137,7 +137,6 @@ fun EmiCalculatorScreen(
             }
 
             if (result != null) {
-                // Monthly EMI Banner
                 Card(
                     shape = RoundedCornerShape(24.dp),
                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
@@ -162,7 +161,6 @@ fun EmiCalculatorScreen(
                     }
                 }
 
-                // Breakdown Stats
                 Card(
                     shape = RoundedCornerShape(20.dp),
                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
@@ -177,7 +175,6 @@ fun EmiCalculatorScreen(
                             fontWeight = FontWeight.Bold
                         )
 
-                        // Visual Ratio Bar
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth()

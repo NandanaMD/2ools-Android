@@ -85,7 +85,6 @@ fun ImagesToPdfScreen(
                     subtitle = "Tap to choose up to 50 gallery images"
                 )
             } else {
-                // Header with photo count & Add button
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween,
@@ -109,7 +108,6 @@ fun ImagesToPdfScreen(
                     }
                 }
 
-                // Images List
                 viewModel.selectedImages.forEachIndexed { index, item ->
                     Card(
                         shape = RoundedCornerShape(16.dp),
@@ -148,12 +146,10 @@ fun ImagesToPdfScreen(
                                 }
                             }
 
-                            // Rotate button
                             IconButton(onClick = { viewModel.rotateImage(index) }) {
                                 Icon(Icons.Rounded.RotateRight, contentDescription = "Rotate 90°")
                             }
 
-                            // Reordering controls
                             IconButton(
                                 onClick = { viewModel.moveImageUp(index) },
                                 enabled = index > 0
@@ -179,7 +175,6 @@ fun ImagesToPdfScreen(
                     }
                 }
 
-                // Document Settings Card
                 Card(
                     shape = RoundedCornerShape(20.dp),
                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
@@ -209,7 +204,6 @@ fun ImagesToPdfScreen(
 
                         HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
 
-                        // Grayscale B&W scan filter toggle
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.SpaceBetween,
@@ -235,7 +229,6 @@ fun ImagesToPdfScreen(
                     }
                 }
 
-                // Generate Action Button
                 if (viewModel.generatedPdfFile == null) {
                     Button(
                         onClick = {
@@ -266,7 +259,6 @@ fun ImagesToPdfScreen(
                         }
                     }
                 } else {
-                    // Generated PDF Result Card
                     Card(
                         shape = RoundedCornerShape(20.dp),
                         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),

@@ -49,7 +49,6 @@ object PasswordGeneratorEngine {
             passwordChars.add(chars[random.nextInt(chars.length)])
         }
 
-        // Shuffle guaranteed characters
         passwordChars.shuffle(random)
         return passwordChars.joinToString("")
     }

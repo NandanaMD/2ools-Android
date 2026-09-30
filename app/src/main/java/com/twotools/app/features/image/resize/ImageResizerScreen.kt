@@ -87,7 +87,6 @@ fun ImageResizerScreen(
                     subtitle = "Select any JPG, PNG, or WebP photo to scale"
                 )
             } else {
-                // Stable, flicker-free preview card
                 Card(
                     shape = RoundedCornerShape(20.dp),
                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
@@ -105,7 +104,6 @@ fun ImageResizerScreen(
                                 .background(MaterialTheme.colorScheme.surface),
                             contentAlignment = Alignment.Center
                         ) {
-                            // Always use selectedImageUri for stable preview - zero flicker
                             AsyncImage(
                                 model = viewModel.selectedImageUri,
                                 contentDescription = "Original Preview",
@@ -113,7 +111,6 @@ fun ImageResizerScreen(
                                 modifier = Modifier.fillMaxSize()
                             )
 
-                            // Live badge showing target dimensions
                             Surface(
                                 shape = RoundedCornerShape(8.dp),
                                 color = MaterialTheme.colorScheme.surface.copy(alpha = 0.85f),
@@ -180,7 +177,6 @@ fun ImageResizerScreen(
                     }
                 }
 
-                // Controls Card
                 Card(
                     shape = RoundedCornerShape(20.dp),
                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
@@ -189,7 +185,6 @@ fun ImageResizerScreen(
                         modifier = Modifier.padding(16.dp),
                         verticalArrangement = Arrangement.spacedBy(16.dp)
                     ) {
-                        // Presets
                         Text(
                             text = "Scale Percentage",
                             style = MaterialTheme.typography.titleMedium,
@@ -211,7 +206,6 @@ fun ImageResizerScreen(
 
                         HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
 
-                        // Exact Pixel Inputs
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.SpaceBetween,
@@ -262,7 +256,6 @@ fun ImageResizerScreen(
                     }
                 }
 
-                // Action Bar
                 ExportActionBar(
                     onSaveClick = {
                         createDocLauncher.launch("resized_${System.currentTimeMillis()}.jpg")

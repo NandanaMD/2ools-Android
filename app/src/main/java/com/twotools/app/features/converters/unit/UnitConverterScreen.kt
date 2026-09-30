@@ -149,7 +149,6 @@ fun UnitConverterScreen(
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            // Category Tabs
             PrimaryTabRow(
                 selectedTabIndex = viewModel.selectedCategory.ordinal,
                 containerColor = MaterialTheme.colorScheme.surfaceVariant,
@@ -164,7 +163,6 @@ fun UnitConverterScreen(
                 }
             }
 
-            // Input Card
             Card(
                 shape = RoundedCornerShape(20.dp),
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
@@ -216,7 +214,6 @@ fun UnitConverterScreen(
                 }
             }
 
-            // Swap Button
             Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
                 FilledIconButton(
                     onClick = viewModel::swapUnits,
@@ -226,7 +223,6 @@ fun UnitConverterScreen(
                 }
             }
 
-            // Output Card
             Card(
                 shape = RoundedCornerShape(20.dp),
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)

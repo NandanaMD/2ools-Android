@@ -22,7 +22,6 @@ class VaultViewModel(
     var selectedTab by mutableStateOf(VaultTab.VAULT)
         private set
 
-    // Vault State
     val entries = mutableStateListOf<VaultEntry>()
     var searchQuery by mutableStateOf("")
         private set
@@ -31,7 +30,6 @@ class VaultViewModel(
 
     val visiblePasswordIds = mutableStateListOf<String>()
 
-    // Generator State
     var genLength by mutableFloatStateOf(16f)
         private set
     var genIncludeUpper by mutableStateOf(true)
@@ -47,7 +45,6 @@ class VaultViewModel(
     var passwordStrength by mutableStateOf("Strong" to 0.75f)
         private set
 
-    // Add Entry Dialog State
     var isAddDialogOpen by mutableStateOf(false)
         private set
     var newTitle by mutableStateOf("")

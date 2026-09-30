@@ -3,20 +3,14 @@ package com.twotools.app.ui.navigation
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.twotools.app.core.designsystem.components.ToolScaffold
-import com.twotools.app.core.model.Tool
-import com.twotools.app.core.registry.ToolRegistry
 import com.twotools.app.features.calculators.dateage.DateAgeCalculatorScreen
 import com.twotools.app.features.calculators.dateage.DateAgeViewModel
 import com.twotools.app.features.calculators.emi.EmiCalculatorScreen
@@ -115,7 +109,6 @@ fun AppNavigation(
             ) + fadeOut(animationSpec = tween(200))
         }
     ) {
-        // Home Screen
         composable(Screen.Home.route) {
             val homeViewModel: HomeViewModel = koinViewModel()
             HomeScreen(
@@ -129,7 +122,6 @@ fun AppNavigation(
             )
         }
 
-        // Settings Screen
         composable(Screen.Settings.route) {
             val vm: SettingsViewModel = koinViewModel()
             SettingsScreen(
@@ -138,7 +130,6 @@ fun AppNavigation(
             )
         }
 
-        // Text Utilities
         composable("tool/text_inspector") {
             val vm: TextInspectorViewModel = koinViewModel()
             TextInspectorScreen(viewModel = vm, onBackClick = { navController.popBackStack() })
@@ -156,7 +147,6 @@ fun AppNavigation(
             VaultScreen(viewModel = vm, onBackClick = { navController.popBackStack() })
         }
 
-        // Calculators
         composable("tool/percentage_calc") {
             val vm: PercentageViewModel = koinViewModel()
             PercentageCalculatorScreen(viewModel = vm, onBackClick = { navController.popBackStack() })
@@ -170,13 +160,11 @@ fun AppNavigation(
             EmiCalculatorScreen(viewModel = vm, onBackClick = { navController.popBackStack() })
         }
 
-        // Unit Converters
         composable("tool/unit_converter") {
             val vm: UnitConverterViewModel = koinViewModel()
             UnitConverterScreen(viewModel = vm, onBackClick = { navController.popBackStack() })
         }
 
-        // QR & Barcodes
         composable("tool/qr_generator") {
             val vm: QrGeneratorViewModel = koinViewModel()
             QrGeneratorScreen(viewModel = vm, onBackClick = { navController.popBackStack() })
@@ -186,7 +174,6 @@ fun AppNavigation(
             QrScannerScreen(viewModel = vm, onBackClick = { navController.popBackStack() })
         }
 
-        // Image Utilities
         composable("tool/image_compressor") {
             val vm: ImageCompressorViewModel = koinViewModel()
             ImageCompressorScreen(viewModel = vm, onBackClick = { navController.popBackStack() })
@@ -204,7 +191,6 @@ fun AppNavigation(
             ExifInspectorScreen(viewModel = vm, onBackClick = { navController.popBackStack() })
         }
 
-        // Documents & PDF
         composable("tool/images_to_pdf") {
             val vm: ImagesToPdfViewModel = koinViewModel()
             ImagesToPdfScreen(viewModel = vm, onBackClick = { navController.popBackStack() })
@@ -212,69 +198,6 @@ fun AppNavigation(
         composable("tool/pdf_to_images") {
             val vm: PdfToImagesViewModel = koinViewModel()
             PdfToImagesScreen(viewModel = vm, onBackClick = { navController.popBackStack() })
-        }
-    }
-}
-
-@Composable
-fun ToolPlaceholderScreen(
-    tool: Tool,
-    onBackClick: () -> Unit
-) {
-    ToolScaffold(
-        title = tool.title,
-        subtitle = "${tool.category.title} (Upcoming Sprint)",
-        onBackClick = onBackClick
-    ) { innerPadding ->
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding)
-                .padding(24.dp),
-            contentAlignment = Alignment.Center
-        ) {
-            Card(
-                shape = MaterialTheme.shapes.large,
-                colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.surfaceVariant
-                )
-            ) {
-                Column(
-                    modifier = Modifier.padding(28.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Icon(
-                        imageVector = tool.icon,
-                        contentDescription = null,
-                        tint = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier.size(56.dp)
-                    )
-                    Spacer(modifier = Modifier.height(16.dp))
-                    Text(
-                        text = tool.title,
-                        style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.Bold
-                    )
-                    Spacer(modifier = Modifier.height(8.dp))
-                    Text(
-                        text = tool.description,
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                    Spacer(modifier = Modifier.height(16.dp))
-                    Surface(
-                        shape = MaterialTheme.shapes.small,
-                        color = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)
-                    ) {
-                        Text(
-                            text = "Engine scheduled for next sprint",
-                            style = MaterialTheme.typography.labelSmall,
-                            color = MaterialTheme.colorScheme.primary,
-                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
-                        )
-                    }
-                }
-            }
         }
     }
 }

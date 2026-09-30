@@ -87,7 +87,6 @@ fun ExifInspectorScreen(
                     subtitle = "Select any photo to inspect its embedded camera and GPS tags"
                 )
             } else {
-                // Photo Header
                 Card(
                     shape = RoundedCornerShape(20.dp),
                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
@@ -128,7 +127,6 @@ fun ExifInspectorScreen(
 
                 val meta = viewModel.metadata
                 if (meta != null) {
-                    // Location Card
                     Card(
                         shape = RoundedCornerShape(20.dp),
                         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
@@ -190,7 +188,6 @@ fun ExifInspectorScreen(
                         }
                     }
 
-                    // Camera & Shot Settings Card
                     Card(
                         shape = RoundedCornerShape(20.dp),
                         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
@@ -223,7 +220,6 @@ fun ExifInspectorScreen(
                         }
                     }
 
-                    // Strip Action Button
                     if (viewModel.strippedFile == null) {
                         Button(
                             onClick = {
@@ -243,7 +239,6 @@ fun ExifInspectorScreen(
                             Text("Strip All Metadata (Privacy Clean)", fontWeight = FontWeight.Bold)
                         }
                     } else {
-                        // Stripped File Card
                         Card(
                             shape = RoundedCornerShape(20.dp),
                             colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),

@@ -32,15 +32,12 @@ class QrGeneratorViewModel(
     var selectedType by mutableStateOf(QrType.URL)
         private set
 
-    // URL fields
     var urlInput by mutableStateOf("https://")
         private set
 
-    // Text fields
     var textInput by mutableStateOf("")
         private set
 
-    // Wi-Fi fields
     var wifiSsid by mutableStateOf("")
         private set
     var wifiPassword by mutableStateOf("")
@@ -50,7 +47,6 @@ class QrGeneratorViewModel(
     var wifiHidden by mutableStateOf(false)
         private set
 
-    // Styling
     val colorOptions = listOf(
         ColorOption("Classic Black", Color.BLACK),
         ColorOption("Deep Navy", Color.rgb(15, 32, 67)),
@@ -61,7 +57,6 @@ class QrGeneratorViewModel(
     var selectedColorIndex by mutableIntStateOf(0)
         private set
 
-    // Result State
     var qrBitmap by mutableStateOf<Bitmap?>(null)
         private set
     var isGenerating by mutableStateOf(false)

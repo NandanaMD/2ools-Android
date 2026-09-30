@@ -66,7 +66,6 @@ fun QrGeneratorScreen(
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            // Type Selector
             PrimaryTabRow(
                 selectedTabIndex = viewModel.selectedType.ordinal,
                 containerColor = MaterialTheme.colorScheme.surfaceVariant,
@@ -81,7 +80,6 @@ fun QrGeneratorScreen(
                 }
             }
 
-            // Input Card
             Card(
                 shape = RoundedCornerShape(20.dp),
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
@@ -158,7 +156,6 @@ fun QrGeneratorScreen(
                                 shape = RoundedCornerShape(12.dp)
                             )
 
-                            // Security selector
                             Row(
                                 modifier = Modifier.fillMaxWidth(),
                                 horizontalArrangement = Arrangement.spacedBy(8.dp)
@@ -174,7 +171,6 @@ fun QrGeneratorScreen(
                         }
                     }
 
-                    // Foreground Color Picker
                     Text(
                         text = "QR Color",
                         style = MaterialTheme.typography.labelMedium,
@@ -205,7 +201,6 @@ fun QrGeneratorScreen(
                 }
             }
 
-            // QR Preview Card
             Card(
                 shape = RoundedCornerShape(24.dp),
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),

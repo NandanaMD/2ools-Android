@@ -63,7 +63,6 @@ fun SettingsScreen(
                 contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp),
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                // App Identity Card
                 item {
                     Card(
                         shape = RoundedCornerShape(20.dp),
@@ -126,7 +125,6 @@ fun SettingsScreen(
                     }
                 }
 
-                // Section: Preferences
                 item {
                     SettingsSectionHeader(title = "PREFERENCES")
                     Spacer(modifier = Modifier.height(6.dp))
@@ -189,7 +187,6 @@ fun SettingsScreen(
                     }
                 }
 
-                // Section: Storage & Data
                 item {
                     SettingsSectionHeader(title = "STORAGE & DATA")
                     Spacer(modifier = Modifier.height(6.dp))
@@ -290,7 +287,6 @@ fun SettingsScreen(
                     }
                 }
 
-                // Section: Privacy & About
                 item {
                     SettingsSectionHeader(title = "LEGAL & PRIVACY")
                     Spacer(modifier = Modifier.height(6.dp))
@@ -302,7 +298,6 @@ fun SettingsScreen(
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         Column {
-                            // Privacy Policy Button
                             SettingsClickableRow(
                                 icon = Icons.Rounded.Security,
                                 iconTint = MaterialTheme.colorScheme.primary,
@@ -334,7 +329,6 @@ fun SettingsScreen(
                                 modifier = Modifier.padding(horizontal = 16.dp)
                             )
 
-                            // Contact Support
                             SettingsClickableRow(
                                 icon = Icons.Rounded.Mail,
                                 iconTint = MaterialTheme.colorScheme.tertiary,
@@ -363,7 +357,6 @@ fun SettingsScreen(
                     }
                 }
 
-                // Offline Guarantee Card
                 item {
                     Card(
                         shape = RoundedCornerShape(16.dp),
@@ -406,7 +399,6 @@ fun SettingsScreen(
                     }
                 }
 
-                // Footer
                 item {
                     Box(
                         modifier = Modifier

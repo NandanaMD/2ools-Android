@@ -8,7 +8,7 @@ import com.twotools.app.core.model.ToolCategory
 object ToolRegistry {
 
     val tools: List<Tool> = listOf(
-        // Category 1: Documents & PDF
+        // Documents & PDF
         Tool(
             id = "images_to_pdf",
             title = "Images to PDF",
@@ -29,7 +29,7 @@ object ToolRegistry {
             keywords = listOf("pdf", "extract", "pages", "images", "jpg", "png")
         ),
 
-        // Category 2: Image Utilities
+        // Image Utilities
         Tool(
             id = "image_compressor",
             title = "Image Compressor",
@@ -69,7 +69,7 @@ object ToolRegistry {
             badge = "Privacy"
         ),
 
-        // Category 3: QR & Barcodes
+        // QR & Barcodes
         Tool(
             id = "qr_scanner",
             title = "QR & Barcode Scanner",
@@ -90,7 +90,7 @@ object ToolRegistry {
             keywords = listOf("qr", "generate", "create", "wifi", "link", "url", "share")
         ),
 
-        // Category 4: Calculators
+        // Calculators
         Tool(
             id = "percentage_calc",
             title = "Percentage Calculator",
@@ -119,7 +119,7 @@ object ToolRegistry {
             keywords = listOf("emi", "loan", "mortgage", "interest", "finance", "money", "bank")
         ),
 
-        // Category 5: Unit Converters
+        // Unit Converters
         Tool(
             id = "unit_converter",
             title = "Universal Unit Converter",
@@ -130,7 +130,7 @@ object ToolRegistry {
             keywords = listOf("convert", "unit", "length", "weight", "mass", "temperature", "data", "storage", "bytes")
         ),
 
-        // Category 6: Text & Security
+        // Text & Security
         Tool(
             id = "text_inspector",
             title = "Text Inspector",

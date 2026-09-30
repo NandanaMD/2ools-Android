@@ -83,7 +83,6 @@ fun PdfToImagesScreen(
                     subtitle = "Tap to pick any PDF file from your device storage"
                 )
             } else {
-                // PDF Stats Card
                 Card(
                     shape = RoundedCornerShape(20.dp),
                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
@@ -111,7 +110,6 @@ fun PdfToImagesScreen(
                                 )
                             }
 
-                            // Format selector chips
                             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                                 FilterChip(
                                     selected = viewModel.outputFormat == Bitmap.CompressFormat.JPEG,
@@ -154,7 +152,6 @@ fun PdfToImagesScreen(
                     }
                 }
 
-                // Extracted Pages List
                 viewModel.extractedPages.forEach { page ->
                     Card(
                         shape = RoundedCornerShape(16.dp),
@@ -190,7 +187,6 @@ fun PdfToImagesScreen(
                                 )
                             }
 
-                            // Save single page
                             IconButton(onClick = {
                                 pageToSave = page.file
                                 val ext = if (viewModel.outputFormat == Bitmap.CompressFormat.PNG) ".png" else ".jpg"
@@ -199,7 +195,6 @@ fun PdfToImagesScreen(
                                 Icon(Icons.Rounded.FileDownload, contentDescription = "Save Page")
                             }
 
-                            // Share single page
                             IconButton(onClick = { viewModel.shareSinglePage(page.file) }) {
                                 Icon(Icons.Rounded.Share, contentDescription = "Share Page")
                             }

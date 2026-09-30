@@ -28,7 +28,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.twotools.app.core.designsystem.theme.*
+import com.twotools.app.core.designsystem.theme.StarAmber
+import com.twotools.app.core.designsystem.theme.ToolAccents
 import com.twotools.app.core.model.Tool
 
 @Composable
@@ -43,12 +44,11 @@ fun ToolCard(
     val interactionSource = remember { MutableInteractionSource() }
     val isPressed by interactionSource.collectIsPressedAsState()
     val scale by animateFloatAsState(
-        targetValue = if (isPressed) 0.96f else 1f,
+        targetValue = if (isPressed) 0.95f else 1f,
         animationSpec = spring(dampingRatio = Spring.DampingRatioMediumBouncy, stiffness = Spring.StiffnessMediumLow),
         label = "toolCardScale"
     )
 
-    // Distinct Material You tonal colors for this tool
     val accent = ToolAccents.forTool(tool.id)
 
     Card(
@@ -71,22 +71,21 @@ fun ToolCard(
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surfaceVariant
         ),
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.15f))
     ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(13.dp)
+                .padding(14.dp)
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                // Tool Distinct Icon Box (Material You tonal container)
                 Box(
                     modifier = Modifier
-                        .size(42.dp)
+                        .size(40.dp)
                         .clip(RoundedCornerShape(12.dp))
                         .background(accent.container()),
                     contentAlignment = Alignment.Center
@@ -99,52 +98,29 @@ fun ToolCard(
                     )
                 }
 
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(4.dp)
+                val starColor by animateColorAsState(
+                    targetValue = if (isFavorite) StarAmber else MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.25f),
+                    label = "star_color"
+                )
+
+                IconButton(
+                    onClick = {
+                        haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+                        onFavoriteToggle()
+                    },
+                    modifier = Modifier.size(32.dp)
                 ) {
-                    // Optional Distinct Badge
-                    tool.badge?.let { badge ->
-                        Surface(
-                            shape = RoundedCornerShape(8.dp),
-                            color = accent.container()
-                        ) {
-                            Text(
-                                text = badge,
-                                style = MaterialTheme.typography.labelSmall,
-                                color = accent.onContainer(),
-                                fontWeight = FontWeight.Bold,
-                                modifier = Modifier.padding(horizontal = 7.dp, vertical = 2.5.dp)
-                            )
-                        }
-                    }
-
-                    // Favorite Button
-                    val starColor by animateColorAsState(
-                        targetValue = if (isFavorite) StarAmber else MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.35f),
-                        label = "star_color"
+                    Icon(
+                        imageVector = if (isFavorite) Icons.Rounded.Star else Icons.Rounded.StarBorder,
+                        contentDescription = if (isFavorite) "Remove from favorites" else "Add to favorites",
+                        tint = starColor,
+                        modifier = Modifier.size(20.dp)
                     )
-
-                    IconButton(
-                        onClick = {
-                            haptic.performHapticFeedback(HapticFeedbackType.LongPress)
-                            onFavoriteToggle()
-                        },
-                        modifier = Modifier.size(32.dp)
-                    ) {
-                        Icon(
-                            imageVector = if (isFavorite) Icons.Rounded.Star else Icons.Rounded.StarBorder,
-                            contentDescription = if (isFavorite) "Remove from favorites" else "Add to favorites",
-                            tint = starColor,
-                            modifier = Modifier.size(20.dp)
-                        )
-                    }
                 }
             }
 
-            Spacer(modifier = Modifier.height(12.dp))
+            Spacer(modifier = Modifier.height(14.dp))
 
-            // Tool Title - Bold, clear, never truncated
             Text(
                 text = tool.title,
                 style = MaterialTheme.typography.titleMedium,
@@ -154,7 +130,7 @@ fun ToolCard(
                 color = MaterialTheme.colorScheme.onSurface,
                 maxLines = 2,
                 minLines = 2,
-                overflow = TextOverflow.Clip
+                overflow = TextOverflow.Ellipsis
             )
         }
     }

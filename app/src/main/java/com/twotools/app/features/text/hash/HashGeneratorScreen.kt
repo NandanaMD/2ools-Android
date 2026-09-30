@@ -127,7 +127,6 @@ fun HashGeneratorScreen(
                 )
             )
 
-            // Switch for Uppercase Hex
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,

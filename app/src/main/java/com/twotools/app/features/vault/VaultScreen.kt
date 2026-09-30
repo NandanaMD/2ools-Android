@@ -67,7 +67,6 @@ fun VaultScreen(
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
-            // Tab Selector
             PrimaryTabRow(
                 selectedTabIndex = viewModel.selectedTab.ordinal,
                 containerColor = MaterialTheme.colorScheme.surfaceVariant,
@@ -109,7 +108,6 @@ fun VaultScreen(
             }
         }
 
-        // Add Account Dialog
         if (viewModel.isAddDialogOpen) {
             AddEntryDialog(
                 viewModel = viewModel,
@@ -135,7 +133,6 @@ private fun VaultListTab(
             .padding(horizontal = 16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        // Search Bar
         OutlinedTextField(
             value = viewModel.searchQuery,
             onValueChange = { viewModel.updateSearchQuery(it) },
@@ -153,7 +150,6 @@ private fun VaultListTab(
             shape = RoundedCornerShape(14.dp)
         )
 
-        // Category Filter Chips
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(8.dp)
@@ -297,7 +293,6 @@ private fun VaultListTab(
                                 }
                             }
 
-                            // Password Display Bar
                             Surface(
                                 shape = RoundedCornerShape(10.dp),
                                 color = MaterialTheme.colorScheme.surface,
@@ -365,7 +360,6 @@ private fun PasswordGeneratorTab(
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        // Generated Password Card
         Card(
             shape = RoundedCornerShape(22.dp),
             colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
@@ -390,7 +384,6 @@ private fun PasswordGeneratorTab(
                     lineHeight = 28.sp
                 )
 
-                // Strength Indicator
                 Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
                     Row(
                         modifier = Modifier.fillMaxWidth(),
@@ -420,7 +413,6 @@ private fun PasswordGeneratorTab(
                     )
                 }
 
-                // Quick Action Bar
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(8.dp)
@@ -458,7 +450,6 @@ private fun PasswordGeneratorTab(
             }
         }
 
-        // Customization Card
         Card(
             shape = RoundedCornerShape(22.dp),
             colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
@@ -574,7 +565,6 @@ private fun AddEntryDialog(
                     modifier = Modifier.fillMaxWidth()
                 )
 
-                // Category selector
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(6.dp)

@@ -147,10 +147,8 @@ class ImagesToPdfViewModel(
                             val page = pdfDocument.startPage(pageInfo)
                             val canvas = page.canvas
 
-                            // Draw white background
                             canvas.drawColor(Color.WHITE)
 
-                            // Calculate aspect fit bounds
                             val availWidth = curPageWidth - (pageMarginPt * 2)
                             val availHeight = curPageHeight - (pageMarginPt * 2)
                             val scale = min(availWidth.toFloat() / bitmap.width, availHeight.toFloat() / bitmap.height)
